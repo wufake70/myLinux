@@ -1,0 +1,6 @@
+linux中 /dev/null
+	是一个特殊的设备文件，它实际上不是一个真实的文件，而是一个黑洞。
+	任何写入 /dev/null 的数据都将被丢弃，它永远不会写入磁盘，也不会占用任何系统资源
+
+测试带宽
+	curl  http://speedtest.wdc01.softlayer.com/downloads/test10.zip -o /dev/null

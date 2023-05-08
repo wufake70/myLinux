@@ -1,0 +1,4 @@
+°¸Àý:
+#!/bin/bash
+touch mimi.txt
+echo i love you >>mimi.txt

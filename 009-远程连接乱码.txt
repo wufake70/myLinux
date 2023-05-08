@@ -1,0 +1,6 @@
+一、使用finalshell 远程连接 linux 出现乱码
+	1.检查编码设置：确保 FinalShell 和 Linux 系统的编码设置是一致的。
+	  您可以在 FinalShell 中的 "设置" 中查看并修改编码设置。
+	2.修改字符集：您可以在 Linux 系统中的终端中输入以下命令，以修改终端的字符集：
+	  "export LANG=zh_CN.UTF-8"
+	  即可；

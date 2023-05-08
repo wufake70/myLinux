@@ -1,0 +1,54 @@
+1.mkdir
+	make directories
+	执行权限：所有用户
+	用法：mkdir -p 目录名
+	描述：创建新目录 ， -p 递归创建
+	eg：
+	mkdir /home/wufake/你好  	（可以用绝对路径或相对路径）
+	mkdir 你好 				（再/home/wufake/文件下创建）
+	mkdir -p /home/wufake/你好/ni	（递归创建）
+	mkdir -p p\p\p a\a\a		（可以同时创建多个文件，window里通用）
+
+2.cd（change directory） 切换目录
+
+3.pwd（print working directory） 获取当前所在的完整路径
+
+4.rmdir（remove empty directory） 删除空目录
+
+5.cp（copy）复制
+-r  递归复制目录及其子目录内的 所有内容
+-p  保持指定的属性(默认：模式,所有权,时间戳)
+
+eg： 
+cp -r a 你好		（使用的是相对路径，将a文件复制到 你好 文件夹）
+
+6.mv（move） （没有选项）
+描述：剪切，转移，改名
+eg：
+mv a 你好/a			（相对路径，移动）
+mv 你好 hellw_world	（相对路径，改名）
+
+7.rm（remove） 删除
+-r 以递归方式删除文件和目录，“-r”选项代表“递归”，并使“rm”命令不仅删除指定的文件或目录，还删除其所有内容，包括子目录及其内容等。；  
+-f 强制删除
+eg：
+rm -r a			（相对路径，删除目录）
+
+8.clear （清屏处理）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

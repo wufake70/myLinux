@@ -1,0 +1,28 @@
+1.if 判断，基本语法
+if [ condition ];then
+	执行命令
+elif [ codition2 ];then
+	执行命令2
+else
+	执行命令3
+fi
+  	
+或者
+if [ condition ]
+	then
+	程序
+fi
+
+注意：if之后 必须有空格；fi 只是用于结尾
+echo 输出命令中如果有 参数 请用双引号包围
+
+案例:
+#!/bin/bash
+if [ $1 -lt '9' ];then
+	echo "$1 < 9"
+elif [ $1 -gt '9' ];then
+	echo "$1 > 9"
+elif [ $1 -eq "9" ];then
+	echo "$1"
+fi
+

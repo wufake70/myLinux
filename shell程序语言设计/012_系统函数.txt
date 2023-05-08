@@ -1,0 +1,16 @@
+1.basename 基本语法
+basename [string/pathname] [suffix(后缀)]
+功能描述:basename命令会删掉所有的前缀 ，然后将字符串显示出来
+如果 指定suffix 后缀 ，将会返回 该文件的文件名 无后缀
+
+案例: 
+basename /home/bd/桌面   结果 桌面
+basename /home/bd/桌面/008_case_syntax.sh .sh	结果 008_case_syntax
+
+2.dirname 基本用法
+dirname 文件的绝对路径 
+功能描述:从给定的包含绝对路径的文件名中 除出 文件名，返回 剩下的路径
+
+案例:
+dirname /home/bd/桌面/008_case_syntax.sh  结果 /home/bd/桌面
+

@@ -1,0 +1,70 @@
+1.文件1.txt 使用linux 命令 第二列 数据求和 并打印
+张三 40
+李四 50
+王五 60
+
+使用 awk -F ' ' -v a=0 '{sum+=$2} END{print sum}' 1.txt
+{sum+=2} 就表示 第二列求和
+
+2.shell命令 如何检查一个文件 是否存在
+
+#!/bin/bash
+function dir_exist()
+{
+if [ -e $1 ];then
+    echo "该文件存在"
+else
+  echo "文件不存在"
+fi
+}
+read -p "请输入文件的绝对路径:" path
+dir_exist $path
+echo "thank you"
+
+3.写shell脚本 ，对文本中无序的一列 数字 排序
+9
+2
+6
+8
+55
+44
+2
+1
+33
+6
+7
+888
+5
+
+使用 sort -nk 1 2.txt | awk '{print}{sum+=$1} END{print sum}'
+{print} 		将排虚的打印出来
+{sum+=$1} 		将第一列数据 进行求和
+END{print sum}	在最后面 打印 总和
+
+4.用shell 脚本查找 当前文件夹 (/home) 下 所有的文本文件 内容中
+包含有字符"shen" 的文件名称
+
+使用   find /home -name '*' | xargs grep -ns shen | cut -d : -f 1		(一行多命令)
+find 查找 home目录下 所有的子目录、文件 ，在用 管道符 连接下一个命令
+xargs命令 将find命令的结果 传给 grep命令 ，
+然后将 含有 'shen'字符 文件路径 、 其行号 (-s 不打印报错信息)传到 cut命令
+最后cut命令 剪切出 相关路径 并打印
+
+注意:
+管道符 与 xargs 的区别 
+管道符 传出参数 是字符串类型
+xargs 是将 上一条命令的结果 作为 参数传给下一个命令，不是字符串
+
+列如:下面两条命令
+find  -name '1.sh' | xargs cat
+find  -name '1.sh' | cat
+第一条 可查看 1.sh 文件的内容，第二条 只能 打印文件的名字
+
+
+
+
+
+
+
+
+

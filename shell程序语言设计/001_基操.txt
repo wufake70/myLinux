@@ -1,0 +1,20 @@
+1.shell 是Linus的 命令行解释器，接收用户命令，然后 调用操作系统内核。
+
+2.Linux提供的Shell解析器有(cat /etc/shells):
+/bin/sh
+/bin/bash
+/sbin/nologin
+/bin/dash
+/bin/tcsh
+/bin/csh。
+
+3.脚本格式
+脚本以#!/bin/bash开头（指定解析器）
+
+4.执行叫本方式
+bash 路径（相对/绝对）
+直接文件名 （用户需要 有执行权限
+
+5.hello world     
+#!/bin/bash
+echo hello world

@@ -1,0 +1,70 @@
+awk 是一个强大的文本分析工具，
+把文件逐行的读入，以空格为默认分隔符将每行切片，
+切开的部分在进行分析处理。
+
+1.基本用法:
+awk [option] '/pattern/ {action1} /patten2/ {action2}……' 文件名
+pattern 		表示awk 在数据中查找 的内容，就是匹配模式  (正则表达式)
+pattern 中不写 即 匹配全部行
+
+action		在找到匹配内容时 所执行的 一系列指令	(使用print 打印)
+print $1  打印对应的 列 ，只用 print 全部打印
+
+option说明:
+-F		指定输入 分隔符（该分隔符，可以是多字符)
+-v		赋值一个用户定义 变量
+
+案例:
+root:x:0:0:root:/root:/bin/bash		（/etc/passwd 文件中的数据)
+
+使用 awk -F : '/^root/ {print $7}' passwd
+表示 使用 匹配 以root开头的 数据行 ，
+在用 ":" 冒号进行 列 的分割,接着打印第七列
+
+使用  awk -F : '/^root/ {print $1","$7}' passwd
+表示 ………… 打印第一列 、第七列 并用逗号隔开 （在passwd 文件中)
+
+使用 awk -F : 'BEGIN{print "无法可到此一游"} {print $1","$2} END{print "我想变强"}' passwd
+
+结果
+无法可到此一游
+root,/bin/bash
+……
+……
+我想变强
+
+使用 awk -F : -v a=1 '/^bd/ {print $3+a}' passwd
+将用 passwd 中bd用户 的id值 增加 a（注意 这里不需要 $,也可以直接加数字）
+
+
+注意：只有 匹配导数据 才会执行 {action} 
+
+
+ifconfig | grep bro | awk -F " " '{print $2}'
+ifconfig | awk -F ' ' '/bro/ {print $2}'
+以上两条命令 皆可匹配 ip
+
+使用 awk '/^$/ {print NR}' 文件名	 
+打印 文本中的 空行 并输出 其行号     **企业真题
+
+2.内置变量
+FILENAME		文件名
+NR			已读的记录数 （即 显示 行号）
+NF			浏览记录的域 的个数 （即 切割后，列的个数）
+
+注意 是在action 内使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

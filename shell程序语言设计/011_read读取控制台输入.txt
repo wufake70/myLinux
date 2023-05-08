@@ -1,0 +1,19 @@
+1.基本语法:
+read (option) (params)
+选项:
+-p		指定读取值时 的提示符，即提示 输入的内容
+-t		指定读取值时 的时间 (秒)， 即规定时间 输入命令
+
+参数:
+变量		指定读取值的 变量名 及参数
+
+案例:
+read -t 10 -p "please input your name in 10 seconds" name 
+echo "hello dear $name"
+echo "wish you are luck dog"
+
+注意:
+1.read 读取的值 可以是 指令 或 数字（不同于前面的特殊参数 $1 ,
+接收 控制台 数据，默认字符串类型)
+
+2.shell 没有 数据类型转换

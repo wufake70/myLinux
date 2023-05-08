@@ -1,0 +1,38 @@
+1.基本语法: [ condition ]   (注意 condition 前后有空格）
+注意：条件空即false 、[] 为false
+
+2.常用判断条件
+(1).两个整数之间的比较
+= 			用于字符串之间比较
+-lt(less than)	小于
+-le			less equal
+-eq			equal
+-gt			greater than（大于）
+-ge			greater equal
+-ne			not equal
+
+如: 输入 [ 8 -le 9 ]
+使用 echo $? 查看结果、返回值 为 非零数
+
+(2).按照文件权限 进行判断
+-r		读的权限
+-w		写入的权限
+-x		可执行的权限
+
+如：[ -r 文件(夹)名 ]
+
+(3).按照文件类型 进行判断
+-e		判断文件是否存在
+-d		判断是不是 一个目录
+-f		判断是不是 一个文件
+
+注意:使用 echo $? 查看上一条命令是否执行，返回0 即true
+
+4.多条件判断
+&&		与，都true执行，false一个 后面的都不判断
+||		或，true一个 就执行，
+
+
+
+
+

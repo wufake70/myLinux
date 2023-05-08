@@ -1,0 +1,80 @@
+一、shellclash
+	是一个用于管理 Clash 的脚本，它可以帮助用户在 shell 环境下便捷地使用 Clash。
+	它支持在 shell 环境下管理 Clash 的各种功能，包括批量导入各类型节点链接及各种订阅链接，
+	支持使用/安装网页面板管理规则组，支持局域网透明代理/纯净模式等多种模式切换，支持在线更新
+
+	支持设备 
+		各种 linux 系统... 
+
+二、在 linux中 安装和使用
+
+一行命令即可
+	sudo -i #切换到root用户，如果需要密码，请输入密码
+	bash #如已处于bash环境可跳过
+	export url='https://fastly.jsdelivr.net/gh/juewuy/ShellClash@master' && wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  && bash /tmp/install.sh && source /etc/profile &> /dev/null
+
+	
+	1. 获取 install.sh 脚本, https://github.com/juewuy/ShellClash/tree/1.7.0
+	2. 以root 权限 运行 install.sh，并选择稳定版本,在后 选择 适合root用户
+		bash ./install.sh
+		输出:
+			请选择想要安装的版本：
+				1 Shellclash公测版
+				2 Shellclash稳定版
+		2
+		输出:
+			安装ShellClash至少需要预留约1MB的磁盘空间
+			1 在/etc目录下安装(适合root用户)
+			2 在/usr/share目录下安装(适合Linux系统)
+			3 在当前用户目录下安装(适合非root用户)
+			4 在外置存储中安装
+			5 手动设置安装目录
+			0 退出安装
+
+		...
+		输入 clash 命令即可管理！！！
+
+	3. 运行 Shellclash ，当输入 clash不管用时，
+	   直接以 root 权限 运行 
+			bash /etc/clash/clash.sh
+			输出:
+				-e 欢迎使用ShellClash！         版本：1.7.0f
+				-e Clash服务没有运行（纯净模式），未设置开机启动！
+				-e TG频道：https://t.me/ShellClash
+				-----------------------------------------------
+				/etc/clash/clash.sh: 96: /etc/clash/clash.sh: source: not found
+				-e  1 启动/重启clash服务
+				-e  2 clash功能设置
+				-e  3 停止clash服务
+				-e  4 clash启动设置
+				-e  5 设置定时任务
+				-e  6 导入配置文件
+				-e  7 clash进阶设置
+				-e  8 其他工具
+				-e  9 更新/卸载
+
+	4. 导入订阅链接，选择 6,在后 选择 1，在后 输入 订阅链接 https:......
+		6
+		输出:
+			1 在线生成Clash配置文件
+			2 导入Clash配置文件链接
+			3 还原配置文件
+			4 更新配置文件
+			5 设置自动更新
+		1
+		输出:
+			1 开始生成配置文件（原文件将被备份）
+			2 设置节点过滤关键字
+			3 设置节点筛选关键字
+			4 选取在线配置规则模版
+			5 选取在线生成服务器
+			0 撤销输入并返回上级菜单
+		suburl.....
+
+	5. 开始代理 
+		使用代理
+			利用 Export 命令使用代理:
+				export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+			
+			取消系统代理:
+				unset  http_proxy  https_proxy  all_proxy

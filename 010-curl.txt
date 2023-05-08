@@ -1,0 +1,6 @@
+curl ifconfig.me		返回公网IP
+curl www.google.com	可以用来测试是否真全局上网
+
+curl 命令
+	
+	-o	输出的文件名字

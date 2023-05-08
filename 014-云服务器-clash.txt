@@ -1,0 +1,35 @@
+一、安装 clash for windows
+	Clash 下载
+		在 Clash release 页面下载相应的版本，
+		对于 Ubuntu 一般使用 clash-linux-amd64-vX.X.X.gz 版本：
+			wget https://github.com/Dreamacro/clash/releases/download/v1.14.0/clash-linux-arm64-v1.14.0.gz -O clash-linux-arm64-v1.14.0.gz （特慢，直接scp上传）
+		
+		解压并重命名:
+			gunzip clash-linux-amd64-v1.10.0.gz（gzip -d xxx.gz）
+			mv clash-linux-amd64-v1.10.0 clash
+		
+	配置文件
+		为clash 添加可执行权限并执行：
+			chmod u+x clash
+			./clash	（cd 到对应文件夹，运行）
+
+		在 "/home/username/.config/clash" 目录下，导入 纯节点文件(config.yaml)
+
+
+	Clash as a daemon
+
+
+	使用代理
+		利用 Export 命令使用代理:
+			export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+		
+		取消系统代理:
+			unset  http_proxy  https_proxy  all_proxy
+		
+	TUN 模式
+
+二、 FAQ
+
+	1. 若报错 没有 Country.mmdb 文件错误，
+	  直接将 本地(window)上的 "clash for window" 中的 Country.mmdb
+	  上传到服务器中对应文件夹(/../user/.config/clash/)

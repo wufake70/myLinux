@@ -1,0 +1,7 @@
+gzip、gunzip的命令 都是用来 解压，后缀为 ".gz"的压缩的文件
+
+不同的是: 他们使用的压缩的算法不同
+
+使用方式:
+	gzip -d xxx.gz	
+	gunzip  xxx.gz

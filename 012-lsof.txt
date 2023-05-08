@@ -1,0 +1,5 @@
+lsof
+	
+				lsof命令 一般都要root权限
+
+lsof -i:port		查看端口占用情况，比"netstat -anp | grep port" 好用
