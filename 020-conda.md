@@ -1,5 +1,11 @@
 # Conda
-Conda是一个强大的Python包管理和环境管理工具，它可以帮助我们轻松地安装、更新、卸载和切换不同版本的Python和各种第三方库²。、
+* Conda是一个强大的Python包管理和环境管理工具，它可以帮助我们轻松地安装、更新、卸载和切换不同版本的Python和各种第三方库。
+* Conda也可以用来构建一个独立的 Python 虚拟环境来，以避免不同项目间的 Python 包版本冲突。
+
+## 安装 miniconda
+* 下载sh脚本 `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+* 执行sh脚本 `bash xxx.sh`
+* 首次激活conda环境 `source ~/.miniconda/bin/activate`
 
 ## 以下是一些常用的conda命令：
 0. 安装py包
